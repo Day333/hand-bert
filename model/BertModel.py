@@ -67,7 +67,7 @@ class BDataset(Dataset):
         return len(self.all_label)
 
 
-class BertEmbeddding(nn.Module):
+class BertEmbedding(nn.Module):
     def __init__(self, config):
         super().__init__()
         self.word_embeddings = nn.Embedding(config["vocab_size"], config["hidden_size"])
@@ -190,7 +190,7 @@ class BertPooler(nn.Module):
 class BertModel(nn.Module):
     def __init__(self, config):
         super().__init__()
-        self.embedding = BertEmbeddding(config)
+        self.embedding = BertEmbedding(config)
         # self.bert_layer = nn.Linear(config["hidden_size"],config["hidden_size"]) #
 
         self.bert_layer = nn.Sequential(
@@ -213,7 +213,7 @@ class Model(nn.Module):
     def __init__(self, config):
         super().__init__()
 
-        self.bert = BertModel(config)  # 3*128*768 @  768 * 768 = 3*128*768 @ 768 * 10 = 3 * 128 * 10,             3*768  @ 768 * 2  = 3 * 2
+        self.bert = BertModel(config)
 
         self.cls_mask = nn.Linear(config["hidden_size"], config["vocab_size"])
         self.cls_next = nn.Linear(config["hidden_size"], 2)

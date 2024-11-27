@@ -85,14 +85,14 @@ class BertEncoder(nn.Module):
         self.feed_forward = Feed_Forward(hidden_size,feed_num)
         self.add_norm2 = Add_Norm(hidden_size)
 
-    def forward(self,x): # x: batch * seq_len * embedding   100 * 128 * 768
-        multi_head_out = self.multi_head_att(x) # multi_head_out : 100 * 128 * 768
-        add_norm1_out = self.add_norm1(multi_head_out) # add_norm1_out: 100 * 128 * 768
+    def forward(self,x): 
+        multi_head_out = self.multi_head_att(x) 
+        add_norm1_out = self.add_norm1(multi_head_out) 
 
-        add_norm1_out = x + add_norm1_out # add_norm1_out :  100 * 128 * 768
+        add_norm1_out = x + add_norm1_out
 
-        feed_forward_out = self.feed_forward(add_norm1_out)  # feed_forward_out :  100 * 128 * 768
-        add_norm2_out = self.add_norm2(feed_forward_out)  # add_norm2_out: 100 * 128 * 768
+        feed_forward_out = self.feed_forward(add_norm1_out)  
+        add_norm2_out = self.add_norm2(feed_forward_out) 
 
         add_norm2_out = add_norm1_out + add_norm2_out
 
