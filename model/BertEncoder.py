@@ -19,11 +19,11 @@ class Feed_Forward(nn.Module):
 class Add_Norm(nn.Module):
     def __init__(self,hidden_size):
         super().__init__()
-        self.ADD = nn.Linear(hidden_size,hidden_size)
+        self.layer = nn.Linear(hidden_size,hidden_size)
         self.norm = nn.LayerNorm(hidden_size)
 
     def forward(self,x):
-        x = self.ADD(x)
+        x = self.layer(x)
         x = self.norm(x)
         return x
 
