@@ -16,14 +16,14 @@
     - [4.1 Bert模型训练](<docs/4 Bert模型训练以及下游任务/4.1 Bert模型训练.md>)
     - [4.2 情感分析](<docs/4 Bert模型训练以及下游任务/4.2 情感分析.md>)
 5. Transformer介绍
-    - [5.1 Transfomer结构.md](<docs/5 Transformer介绍/5.1 Transfomer结构.md>)
+    - [5.1 Transfomer结构](<docs/5 Transformer介绍/5.1 Transfomer结构.md>)
 
 
 ## 贡献者名单
 
 | 姓名 | 职责 | 简介 |
 | :----| :---- | :---- |
-| 丁奎业 | 项目负责人 | 朴实无华的NLP小白 |
+| 丁奎业 | 项目负责人 | NLP爱好者 |
 
 
 
